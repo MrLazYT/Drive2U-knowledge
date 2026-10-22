@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "57905aa375d3602b",
+        "id": "eb7bacae869d384c",
         "type": "tabs",
         "children": [
           {
-            "id": "ec0a4ba00e496105",
+            "id": "9173a07761b55a3f",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -181,23 +181,23 @@
       "bases:Створити нову базу": false
     }
   },
-  "active": "ec0a4ba00e496105",
+  "active": "9173a07761b55a3f",
   "lastOpenFiles": [
-    "Components/Mobile-Application.md",
-    "MOC-Drive2U.md",
-    "Components/Backend-API.md",
     "Components/Mapping-Integration.md",
-    "Components/Realtime-Updates.md",
+    "Components/Mobile-Application.md",
+    "Conventions.md",
+    "MOC-Drive2U.md",
+    "Glossary/Project-Glossary.md",
+    "Decisions/ADR-002-Server-Authority.md",
+    "Decisions/ADR-001-Technology-Stack.md",
+    "Concepts/Passenger.md",
+    "Concepts/Ride-Lifecycle.md",
+    "Concepts/Ride.md",
     "Concepts/Driver.md",
     "Concepts/Fare-Quote.md",
-    "Concepts/Passenger.md",
-    "Concepts/Ride.md",
-    "Concepts/Ride-Lifecycle.md",
     "Concepts/Route.md",
-    "Decisions/ADR-001-Technology-Stack.md",
-    "Decisions/ADR-002-Server-Authority.md",
-    "Glossary/Project-Glossary.md",
-    "Conventions.md",
+    "Components/Realtime-Updates.md",
+    "Components/Backend-API.md",
     "Glossary",
     "Decisions",
     "Components",

@@ -12,15 +12,15 @@ source: "drive2u/docs/app-requirements.md — FR-05–FR-08; розділ 5"
 # Життєвий цикл замовлення
 
 ## Стани та переходи
-| Початковий стан | Новий стан | Хто виконує |
-|---|---|---|
-| Waiting | Accepted | Доступний допущений водій |
-| Accepted | Arrived | Призначений водій |
-| Arrived | InProgress | Призначений водій |
-| InProgress | Completed | Призначений водій |
-| Waiting | Cancelled | Пасажир-власник |
-| Accepted | Cancelled | Пасажир-власник або призначений водій |
-| Arrived | Cancelled | Призначений водій |
+| Початковий стан | Новий стан | Хто виконує                           |
+| --------------- | ---------- | ------------------------------------- |
+| Waiting         | Accepted   | Доступний допущений водій             |
+| Accepted        | Arrived    | Призначений водій                     |
+| Arrived         | InProgress | Призначений водій                     |
+| InProgress      | Completed  | Призначений водій                     |
+| Waiting         | Cancelled  | Пасажир-власник                       |
+| Accepted        | Cancelled  | Пасажир-власник або призначений водій |
+| Arrived         | Cancelled  | Призначений водій                     |
 
 ## Інваріанти
 Активні стани [[Passenger]]: Waiting, Accepted, Arrived, InProgress. Активні стани [[Driver]]: Accepted, Arrived, InProgress. Completed і Cancelled — кінцеві, звичайне повернення з них заборонене. Інші переходи не дозволені. Відмова водія потребує причини; ініціатор і час скасування зберігаються.
