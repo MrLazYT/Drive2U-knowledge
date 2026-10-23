@@ -1,12 +1,12 @@
 ---
 type: moc
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-23
 status: active
 tags:
-  - drive2u
-  - moc
-source: "drive2u/ЗАВДАННЯ.md; drive2u/docs/app-requirements.md"
+  - drive2u
+  - moc
+source: "drive2u/docs/app-requirements.md"
 ---
   
 # Drive2U — карта знань
