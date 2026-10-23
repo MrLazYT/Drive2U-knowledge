@@ -33,3 +33,6 @@ source: "drive2u/docs/app-requirements.md"
 ## Архітектурні рішення
 - [[ADR-001-Technology-Stack|ADR-001 — технологічний стек]]
 - [[ADR-002-Server-Authority|ADR-002 — серверний контроль бізнес-правил]]
+
+## Connector additions
+- [[Knowledge-Connector]]
