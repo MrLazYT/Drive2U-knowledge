@@ -1,11 +1,11 @@
 ---
 type: convention
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-23
 status: active
 tags:
-  - drive2u
-  - convention
+  - drive2u
+  - convention
 source: "drive2u/docs/harness-requirements.md — розділи 3–5, 8"
 ---
 
