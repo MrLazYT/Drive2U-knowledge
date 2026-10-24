@@ -1,11 +1,9 @@
 ---
 type: component
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-24
 status: planned
-tags:
-  - drive2u
-  - component
+tags: [drive2u, component]
 source: "drive2u/docs/app-requirements.md — FR-08; розділ 8"
 ---
 

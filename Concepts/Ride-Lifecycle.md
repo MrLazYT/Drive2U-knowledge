@@ -1,11 +1,9 @@
 ---
 type: concept
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-24
 status: planned
-tags:
-  - drive2u
-  - concept
+tags: [drive2u, concept]
 source: "drive2u/docs/app-requirements.md — FR-05–FR-08; розділ 5"
 ---
 

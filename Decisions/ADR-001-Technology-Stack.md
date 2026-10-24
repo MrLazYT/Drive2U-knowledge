@@ -1,11 +1,9 @@
 ---
 type: decision
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-24
 status: accepted
-tags:
-  - drive2u
-  - decision
+tags: [drive2u, decision]
 source: "drive2u/ЗАВДАННЯ.md; drive2u/docs/app-requirements.md — розділ 8"
 decision_id: ADR-001
 ---

@@ -1,11 +1,9 @@
 ---
 type: glossary
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-24
 status: planned
-tags:
-  - drive2u
-  - glossary
+tags: [drive2u, glossary]
 source: "drive2u/docs/app-requirements.md; drive2u/docs/harness-requirements.md"
 ---
 

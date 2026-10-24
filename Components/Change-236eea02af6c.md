@@ -1,11 +1,9 @@
 ---
 type: component
-created: '2026-10-24'
-updated: '2026-10-24'
+created: 2026-10-24
+updated: 2026-10-24
 status: active
-tags:
-- drive2u
-- component
+tags: [drive2u, component]
 source: https://github.com/MrLazYT/Drive2U/commit/236eea02af6c70df0240091503c7e02f79a4ba78;
   drive2u/docs/ontology.md
 ---

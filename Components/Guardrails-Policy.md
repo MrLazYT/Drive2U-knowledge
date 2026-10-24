@@ -1,11 +1,9 @@
 ---
 type: component
-created: '2026-10-24'
-updated: '2026-10-24'
+created: 2026-10-24
+updated: 2026-10-24
 status: active
-tags:
-- drive2u
-- component
+tags: [drive2u, component]
 source: 'drive2u@5884f32ca4c8d2032aad403c7335dd9cc4ef5f14: harness/guardrails/pre-tool-use.ps1,
   test_guardrails.py; docs/guardrails.md; docs/guardrails-test-cases.md; docs/skills-verification.md
   R2/K2'

@@ -1,11 +1,9 @@
 ---
 type: component
-created: '2026-10-23'
-updated: '2026-10-24'
+created: 2026-10-23
+updated: 2026-10-24
 status: active
-tags:
-- drive2u
-- component
+tags: [drive2u, component]
 source: 'drive2u/harness/knowledge-mcp/README.md; підтверджені MCP-виклики версії
   1.2.0; drive2u/docs/ontology.md; drive2u@5884f32ca4c8d2032aad403c7335dd9cc4ef5f14:
   harness/knowledge-mcp/knowledge.py, server.py, tests; docs/skills-verification.md
