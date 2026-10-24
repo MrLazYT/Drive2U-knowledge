@@ -1,12 +1,12 @@
 ---
 type: concept
 created: 2026-10-22
-updated: 2026-10-23
+updated: '2026-10-24'
 status: planned
 tags:
-  - drive2u
-  - concept
-source: "drive2u/docs/app-requirements.md — FR-04–FR-09; розділи 5–6"
+- drive2u
+- concept
+source: drive2u/docs/app-requirements.md — FR-04–FR-09; розділи 5–6; drive2u/docs/ontology.md
 ---
 
 # Замовлення поїздки
@@ -24,3 +24,8 @@ PassengerId, DriverId, координати та адреси подачі й п
 
 ## Перевірка
 Зберігається погоджена ціна; дублікати не виникають; незаконні зміни та доступ до чужих деталей відхиляються; конкурентні запити не залишають часткових даних.
+
+## Typed relations
+- depends_on: [[Fare-Quote]]
+- uses: [[Backend-API]]
+- governed_by: [[ADR-002-Server-Authority]]
