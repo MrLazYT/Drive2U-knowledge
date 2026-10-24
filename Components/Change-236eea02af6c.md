@@ -6,7 +6,8 @@ status: active
 tags:
 - drive2u
 - component
-source: https://github.com/MrLazYT/Drive2U/commit/236eea02af6c70df0240091503c7e02f79a4ba78
+source: https://github.com/MrLazYT/Drive2U/commit/236eea02af6c70df0240091503c7e02f79a4ba78;
+  drive2u/docs/ontology.md
 ---
 
 # Додавання MCP-конектора бази знань
@@ -42,3 +43,6 @@ source: https://github.com/MrLazYT/Drive2U/commit/236eea02af6c70df0240091503c7e0
 ## Related notes
 - [[Conventions]]
 - [[Knowledge-Connector]]
+
+## Typed relations
+- governed_by: [[Conventions]]
