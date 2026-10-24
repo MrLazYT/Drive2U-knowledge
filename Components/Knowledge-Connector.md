@@ -1,12 +1,13 @@
 ---
 type: component
 created: '2026-10-23'
-updated: '2026-10-23'
+updated: '2026-10-24'
 status: active
 tags:
 - drive2u
 - component
-source: drive2u/harness/knowledge-mcp/README.md; підтверджені MCP-виклики версії 1.2.0
+source: drive2u/harness/knowledge-mcp/README.md; підтверджені MCP-виклики версії 1.2.0;
+  drive2u/docs/ontology.md
 ---
 
 # Конектор бази знань
@@ -32,3 +33,6 @@ source: drive2u/harness/knowledge-mcp/README.md; підтверджені MCP-в
 ## Related notes
 - [[Backend-API]]
 - [[Conventions]]
+
+## Typed relations
+- governed_by: [[Conventions]]
