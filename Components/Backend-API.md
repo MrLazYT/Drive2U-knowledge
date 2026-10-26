@@ -1,14 +1,16 @@
 ---
 type: component
 created: 2026-10-22
-updated: '2026-10-24'
-status: planned
+updated: '2026-10-26'
+status: active
 tags:
 - drive2u
 - component
 source: 'drive2u/docs/app-requirements.md — FR-01–FR-10; розділи 5–8; drive2u@7147aba786978b2aec6411294d5837313d2b7dde:
   server/Drive2U.Api/FareEstimatesController.cs, Program.cs; server/Drive2U.Fares/FareCalculator.cs,
-  FareTariff.cs; server/README.md; docs/orchestration/backend-fare/verification.md'
+  FareTariff.cs; server/README.md; docs/orchestration/backend-fare/verification.md;
+  drive2u@a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0: server/Drive2U.Api/Mvp, server/Drive2U.Tests/MvpApiTests.cs,
+  docs/mvp/verification.md'
 ---
 
 # Серверний API
@@ -35,3 +37,10 @@ ASP.NET Core Web API — джерело істини для прав, варто
 Це демонстраційний estimate за недовіреною клієнтською відстанню, а не [[Fare-Quote]]: немає quoteId, строку дії, серверної дорожньої відстані чи фіксації ціни замовлення. Повний FR-03 та весь Backend-API не завершені.
 
 Історичний результат на цій ревізії, за `docs/orchestration/backend-fare/verification.md`: Coder і незалежний Reviewer підтвердили build без warnings/errors та 37 passed, 0 failed/skipped (10 business, 20 HTTP, 7 startup cases). Loopback smoke Coder: health успішний; 2.5 км за прикладом 40/12 → 70 UAH; створений процес завершено. У поточній синхронізації ці тести повторно не запускалися; код server/ відтоді не змінено.
+
+## Підтверджений MVP — 2026-10-26
+На ревізії Drive2U `a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0` попередній частковий етап розширено до працюючого локального MVP. Код: `server/Drive2U.Api/Mvp/`, EF Core migrations, `server/Drive2U.Tests/MvpApiTests.cs`; контракт і докази: `docs/mvp/api-contract.md`, `docs/mvp/verification.md`, `docs/mvp/api-smoke.json`. Статус planned у попередньому описі стосується історичного етапу 2026-10-24.
+
+Identity/SQLite зберігають пасажирів, водіїв, автомобіль, тариф, hashed session tokens, quote та ride. Реєстрація створює тільки пасажира; Development seed повторюваний. Сервер перевіряє роль і власника, expiry та ідемпотентність quote, фіксує тариф/маршрут/ціну й застосовує переходи Waiting → Accepted → Arrived → InProgress → Completed та дозволене скасування. SQLite-транзакції та індекси забезпечують один успішний конкурентний accept. SignalR надсилає події тільки учасникам після збереження; REST лишається джерелом актуального стану. Старий `/api/fare-estimates` збережений як окремий демонстраційний estimate, не повний FareQuote.
+
+Release build: 0 errors/warnings. xUnit: 47 passed, 0 failed/skipped, включно з авторизацією, чужим доступом, quote, переходами, SQLite-конкуренцією та SignalR. Ізольований API smoke: 14/14, повний цикл і історія після restart. Це не перевірка Android UI. Production-експлуатація, TLS, backup, допуск водіїв, квоти маршрутизації та навантаження потребують окремого приймання.
