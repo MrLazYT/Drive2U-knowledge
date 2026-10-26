@@ -1,10 +1,13 @@
 ---
 type: concept
 created: 2026-10-22
-updated: 2026-10-24
-status: planned
-tags: [drive2u, concept]
-source: "drive2u/docs/app-requirements.md — FR-05–FR-08; розділ 5"
+updated: '2026-10-26'
+status: active
+tags:
+- drive2u
+- concept
+source: 'drive2u/docs/app-requirements.md — FR-05–FR-08; розділ 5; drive2u@a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0:
+  docs/mvp/verification.md, code and tests'
 ---
 
 # Життєвий цикл замовлення
@@ -28,3 +31,8 @@ source: "drive2u/docs/app-requirements.md — FR-05–FR-08; розділ 5"
 
 ## Перевірка
 Позитивні тести всіх дозволених переходів, негативні — пропусків, чужих ролей і кінцевих станів. [[Realtime-Updates]] повідомляє вже збережений стан [[Ride]].
+
+## Підтверджена реалізація MVP — 2026-10-26
+На Drive2U `a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0` сервер реалізує наведені вище переходи без зміни FR-07: пасажир скасовує власне Waiting/Accepted, водій скасовує своє Accepted/Arrived з причиною. Completed/Cancelled кінцеві. Стан, версія, ініціатор/причина/час скасування зберігаються в SQLite. Один пасажир має не більше однієї активної поїздки; водій приймає тільки одну активну за наявності допуску, доступності й автомобіля. Прийняття та скасування працюють транзакційно; паралельне прийняття двома водіями дає один успіх і контрольований 409 іншому.
+
+Код: `server/Drive2U.Api/Mvp/Rides.cs`, `server/Drive2U.Api/Mvp/Data.cs`; xUnit 47/47, включно з реальним SQLite конкурентним тестом, і API smoke 14/14 з історією після restart. Android UI на фізичному пристрої не перевірений.
