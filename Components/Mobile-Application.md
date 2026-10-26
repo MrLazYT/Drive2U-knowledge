@@ -1,10 +1,13 @@
 ---
 type: component
 created: 2026-10-22
-updated: 2026-10-24
-status: planned
-tags: [drive2u, component]
-source: "drive2u/docs/app-requirements.md — FR-01–FR-09; розділи 7–8"
+updated: '2026-10-26'
+status: active
+tags:
+- drive2u
+- component
+source: 'drive2u/docs/app-requirements.md — FR-01–FR-09; розділи 7–8; drive2u@a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0:
+  docs/mvp/verification.md, code and tests'
 ---
 
 # Мобільний застосунок
@@ -21,3 +24,10 @@ source: "drive2u/docs/app-requirements.md — FR-01–FR-09; розділи 7–
 Передбачені відмова дозволу геолокації, відсутність мережі, помилки адрес і маршруту, прострочена пропозиція, конфлікт прийняття. Повтор створення використовує той самий ключ ідемпотентності. Після перепідключення стан перечитується.
 
 Компонентні тести перевіряють ручний вибір адрес, повідомлення про помилки й дії за статусами; інтеграційні — взаємодію з API. Стек: [[ADR-001-Technology-Stack]].
+
+## Підтверджений MVP — 2026-10-26
+Реалізовано `mobile/` на Drive2U `a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0`: Expo/React Native/TypeScript із пасажирським і водійським входом, реєстрацією пасажира, SecureStore-сесією, мапою, вибором точок, серверним quote, підтвердженням, активною поїздкою, доступністю водія, прийняттям і переходами, історією, профілем та виходом. Токен видаляється при 401/виході; повторні натискання дій заблоковано. SignalR запускає перечитування API; reconnect, foreground і періодичний refresh відновлюють стан.
+
+UI українською, показує loading/empty/error/offline, демонстраційний маршрут і «Готівка — демонстрація». Локальна схема Leaflet у WebView не використовує публічні тайли за замовчуванням; GPS необов’язковий. Development HTTP потребує явного `APP_VARIANT=development`; production Expo config за замовчуванням вимикає cleartext.
+
+Typecheck пройшов, Jest/RNTL 3/3, Expo Doctor 20/20, Android Hermes export успішний. Android SDK/емулятор/пристрій недоступні, тому запуск UI на Android і debug APK не підтверджені; точний ручний сценарій у `README.md` та `docs/mvp/verification.md`.
