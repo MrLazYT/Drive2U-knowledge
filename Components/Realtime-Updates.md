@@ -1,10 +1,13 @@
 ---
 type: component
 created: 2026-10-22
-updated: 2026-10-24
-status: planned
-tags: [drive2u, component]
-source: "drive2u/docs/app-requirements.md — FR-08; розділ 8"
+updated: '2026-10-26'
+status: active
+tags:
+- drive2u
+- component
+source: 'drive2u/docs/app-requirements.md — FR-08; розділ 8; drive2u@a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0:
+  docs/mvp/verification.md, code and tests'
 ---
 
 # Оновлення стану в реальному часі
@@ -19,3 +22,8 @@ SignalR повідомляє учасників [[Ride]] про вже збер�
 
 ## Перевірка
 Чужа підписка відхиляється, застарілий статус не повертає UI назад, пропущена подія компенсується перечитуванням, завершена транзакція передує повідомленню. Стани: [[Ride-Lifecycle]]; терміни: [[Project-Glossary]].
+
+## Підтверджений MVP — 2026-10-26
+На Drive2U `a81e4314ece8f4ef2ae2d4f3ffa789ef8cde21e0` сервер `/hubs/rides` автентифікує session token і додає з’єднання тільки до групи власного userId; публічного JoinRide немає. Після збереження стану надсилає RideChanged з rideId/version/status учасникам. Logout прибирає з’єднання відкликаної сесії з групи. Клієнт перечитує REST після події, reconnect, foreground та кожні 8 секунд як резервний механізм. Подія не замінює API як джерело істини.
+
+Код: `server/Drive2U.Api/Mvp/Authentication.cs`, `server/Drive2U.Api/Mvp/Rides.cs`, `mobile/App.tsx`. xUnit підтвердив події для пасажира й водія та відсутність події у стороннього користувача; загальний результат 47/47 у `docs/mvp/verification.md`. Доставку кожної події, роботу після реального мережевого розриву та Android UI на пристрої окремо не вимірювали.
